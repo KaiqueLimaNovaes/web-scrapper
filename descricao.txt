@@ -1,0 +1,4 @@
+dependencias instaladas
+- express
+- puppeteer
+- nodemon (para rodar o nodemon foi adicionado no start do package.json para rodarmos com npm start)
