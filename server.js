@@ -9,6 +9,17 @@ server.get('/', async (request, response)=>{
     await page.goto('https://www.alura.com.br/formacao-front-end');
     //await page.screenshot({path: 'example.png'});
 
+    // Get the "viewport" of the page, as reported by the page.
+    const dimensions = await page.evaluate(() => {
+        return {
+        width: document.documentElement.clientWidth,
+        height: document.documentElement.clientHeight,
+        deviceScaleFactor: window.devicePixelRatio
+        };
+    });
+
+    console.log('Dimensions:', dimensions);
+
     await browser.close();
     
     //pegar dados da pagina e imprimir
